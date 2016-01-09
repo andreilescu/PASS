@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pass project</title>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://code.angularjs.org/1.2.4/angular-route.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-resource.min.js"></script>
+<script src="app.js"></script>
+
+<!-- controllers -->
+<script src="/partials/student/student.list.controller.js"></script>
+
+<!-- factories -->
+<script src="/partials/student/student.factory.js"></script>
+
+</head>
+
+<body ng-app="pass" style="padding: 0; margin: 0;">
+		
+		<div style="background: #777; height: 120px; padding: 20px 0 20px 40px; ">
+			<span style="font-weight: bold; font-size: 42px; color: white">Students</span>
+		</div>
+		<div class="container">
+			<div ng-view></div>
+		</div>
+</body>
+
+</html>

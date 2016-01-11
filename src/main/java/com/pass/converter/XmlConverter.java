@@ -32,7 +32,7 @@ public class XmlConverter {
 		
 		try {
 		
-			System.out.println("--- Marshaller ---");
+			System.out.println("-----> Marshaller ----->");
 			os = new FileOutputStream(FILE_NAME);
 			
   			this.marshaller.marshal(generatedList, new StreamResult(os));

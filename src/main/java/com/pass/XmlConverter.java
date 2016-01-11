@@ -9,6 +9,7 @@ import java.util.List;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.oxm.Marshaller;
 import org.springframework.oxm.Unmarshaller;
 
@@ -18,14 +19,15 @@ import com.pass.model.StudentsDO;
 public class XmlConverter {
 	
 	private static final String FILE_NAME = "import.xml";
+	@Autowired
 	private Marshaller marshaller;
+	@Autowired
 	private Unmarshaller unmarshaller;
 	
 	
 	public void createStudentXml() throws IOException {
 		FileOutputStream os = null;
 		StudentsDO generatedList = new StudentsDO();
-//		generatedList.setStudents(new ArrayList<StudentDO>());
 		generatedList.setStudents(this.generateStudents());
 		
 		try {
@@ -33,7 +35,7 @@ public class XmlConverter {
 			System.out.println("--- Marshaller ---");
 			os = new FileOutputStream(FILE_NAME);
 			
-			this.marshaller.marshal(generatedList, new StreamResult(os));
+  			this.marshaller.marshal(generatedList, new StreamResult(os));
 			System.out.println("Students: " + generatedList + " saved to info.xml file. ");
 
 		} finally {

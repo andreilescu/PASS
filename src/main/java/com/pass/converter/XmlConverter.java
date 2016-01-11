@@ -19,6 +19,7 @@ import com.pass.model.StudentsDO;
 public class XmlConverter {
 	
 	private static final String FILE_NAME = "import.xml";
+	
 	@Autowired
 	private Marshaller marshaller;
 	@Autowired
@@ -46,7 +47,9 @@ public class XmlConverter {
 	}
 	
 	public List<StudentDO> getStudents() throws IOException {
+		// Create student xml file	
 		createStudentXml();
+		
 		// Unmarshall the xml file to StudentDO object
 		FileInputStream is = null;		
 		StudentsDO xmlStudents;
@@ -58,7 +61,6 @@ public class XmlConverter {
 			
 			xmlStudents = (StudentsDO) this.unmarshaller.unmarshal(new StreamSource(is));
 			studentDOs = xmlStudents.getStudents();
-//			System.out.println("Students from XML: " + studentDOs);
 			
 		} finally {
 			
@@ -112,20 +114,9 @@ public class XmlConverter {
 		return xmlStudents;
 	}
 	
-	public Marshaller getMarshaller() {
-		return marshaller;
-	}
-
-
 	public void setMarshaller(Marshaller marshaller) {
 		this.marshaller = marshaller;
 	}
-
-
-	public Unmarshaller getUnmarshaller() {
-		return unmarshaller;
-	}
-
 
 	public void setUnmarshaller(Unmarshaller unmarshaller) {
 		this.unmarshaller = unmarshaller;

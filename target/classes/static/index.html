@@ -4,11 +4,16 @@
 <meta charset="UTF-8">
 <title>Pass project</title>
 
+<!-- style sheets -->
+<link rel="stylesheet" href="partials/css/pass.css">
 <link rel="stylesheet" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
+<!-- bower libraries -->
 <script src="lib/bower_components/angular/angular.min.js"></script>
 <script src="lib/bower_components/angular-route/angular-route.min.js"></script>
 <script src="lib/bower_components/angular-resource/angular-resource.min.js"></script>
+
+<!-- main script -->
 <script src="app.js"></script>
 
 <!-- controllers -->
@@ -19,10 +24,10 @@
 
 </head>
 
-<body ng-app="pass" style="padding: 0; margin: 0;">
+<body id="body" ng-app="pass" style="padding: 0; margin: 0;">
 		
 		<div style="background: #777; height: 120px; padding: 20px 0 20px 40px; ">
-			<span style="font-weight: bold; font-size: 42px; color: white">Students</span>
+			<span style="font-weight: bold; font-size: 42px; color:#F2F2F2;">Students</span>
 		</div>
 		<div class="container">
 			<div ng-view></div>

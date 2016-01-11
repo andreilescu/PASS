@@ -1,18 +1,18 @@
 <div>
 	<div style="width: 100%; float: left; height: 70px; background-color: #777; color: white; padding: 10px; margin:10px 0 10px 0;" >
-			<span style="padding-top: 10px; padding-bottom: 10px; font-size: 20px; font-weight: bold;">Search student by Name, Average Rate and Registration Number</span>
+			<span style="padding-top: 10px; padding-bottom: 10px; font-size: 15px; font-weight: bold; color:#F2F2F2;">Search student by Name, Average Rate and Registration Number</span>
 			<input class="pull left" style="width:100%; color: black; padding-left:5px;" ng-model="vm.searchItem">
 	</div>
 	
 	<table class="table table-striped" style="margin-top: 20px;">
-	  	<thead style="background-color: #777; color: white; font-size: 20px;">
+	  	<thead style="background-color: #777; color:#F2F2F2; font-size: 15px;">
 		      <tr>
 		        <th>Name</th>
 		        <th>Average Rate</th>
 		        <th>Registration Number</th>
 		      </tr>
     	</thead>
-		  <tr ng-repeat="x in vm.students | filter : vm.searchItem | orderBy : 'name' " ng-click="vm.predictHoroscopeForStudent(x)">
+		  <tr ng-repeat="x in vm.students | filter : vm.searchItem | orderBy : 'name' " ng-click="vm.predictHoroscopeForStudent(x)" style="font-size: 12px;">
 			    <td>{{ x.name }}</td>
 			    <td>{{ x.averageRate }}</td>
 			    <td>{{ x.registrationNumber }}
@@ -20,14 +20,14 @@
 		  </tr>
 	</table>
 	
-	<div style="width: 100%; float: left; height: 70px; background-color: #777; color: white; padding: 10px; margin:10px 0 10px 0;" >
+	<div style="width: 100%; float: left; height: 70px; background-color: #777; color:#F2F2F2; padding: 10px; margin:10px 0 10px 0;" >
 			<div class="col-md-12" style="padding: 0">
 				<div class="col-md-8"  style="padding: 0">
-					<span style="padding-top: 10px; padding-bottom: 10px; font-size: 20px; font-weight: bold; float:left"> Predict number of students with average rate > 8</span>
+					<span style="padding-top: 10px; padding-bottom: 10px; font-size: 15px; font-weight: bold; float:left"> Predict number of students with average rate > 8</span>
 				</div>
 				<div class="col-md-4">
 					<div class="col-md-10">
-						<button ng-click="vm.predictNumberOfStudentsWithHighAverage(vm.students)" style="float:right;">Predict
+						<button ng-click="vm.predictNumberOfStudentsWithHighAverage(vm.students)" style="float:right; color: white; font-size: 12px;">Predict
 						</button>
 					</div>
 					<div class="col-md-2">
@@ -40,15 +40,15 @@
 	<div style="width: 100%; float: left; padding-top: 20px; padding-bottom: 20px;" ng-show="vm.selectedStudent">
 		
 		<div  style="width: 100%; float: left; height: 200px; background-color: #F9F9F9;"> 
-			<div id="header" style="width: 100%; float: left; height: 50px; background-color: #777; color: white; padding: 10px;" >
-				<span style="font-size: 20px; font-weight: bold;">Horoscope for the student: </span> 
-				<span style="font-size: 20px; font-weight: bold;">  {{vm.student.name}}</span>
+			<div id="header" style="width: 100%; float: left; height: 50px; background-color: #777; color:#F2F2F2; padding: 10px; font-size: 15px; font-weight: bold;" >
+				<span>Horoscope for the student: </span> 
+				<span>  {{vm.student.name}}</span>
 			</div>
 			
-			<div class="col-md-12" style="padding-top: 10px;">
-				<span>AverageRate will be: <span style="font-weight: bold">{{vm.averageRate}} </span></span>
+			<div class="col-md-12" style="padding-top: 10px; font-size: 13px;">
+				<span>AverageRate will be: <span style="font-weight: bold">{{vm.averageRate}}</span></span>
 				<br>
-				<span>Student will have a: <span style="font-weight: bold">{{vm.daySucces}}</span></span>
+				<span>Student will have a: <span style="font-weight: bold"></span>{{vm.daySucces}}</span></span>
 			</div>
 		</div>
 		

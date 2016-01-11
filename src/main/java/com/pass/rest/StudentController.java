@@ -3,6 +3,7 @@ package com.pass.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pass.model.StudentDO;
 import com.pass.service.api.StudentService;
 
+@Profile("relational-database")
 @RestController
 @RequestMapping(value = "/student")
 public class StudentController {

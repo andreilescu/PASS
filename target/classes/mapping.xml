@@ -1,0 +1,23 @@
+<mapping>
+	<class name="com.pass.model.StudentDO">
+
+		<map-to xml="student" />
+		
+		<field name="id" type="integer">
+			<bind-xml name="id" node="element" />
+		</field>
+
+		<field name="name" type="string">
+			<bind-xml name="name" node="element" />
+		</field>
+
+		<field name="averageRate" type="double">
+			<bind-xml name="average-rate" node="element" />
+		</field>
+
+		<field name="registrationNumber" type="integer">
+			<bind-xml name="registration-number" node="element" />
+		</field>
+		
+	</class>
+</mapping>

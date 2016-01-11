@@ -7,6 +7,8 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.oxm.castor.CastorMarshaller;
 
+import com.pass.converter.XmlConverter;
+
 @Profile("xml-database")
 @Configuration
 public class XmlApplicationConfiguration {

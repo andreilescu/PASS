@@ -1,4 +1,4 @@
-package com.pass;
+package com.pass.converter;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -36,7 +36,7 @@ public class XmlConverter {
 			os = new FileOutputStream(FILE_NAME);
 			
   			this.marshaller.marshal(generatedList, new StreamResult(os));
-			System.out.println("Students: " + generatedList + " saved to info.xml file. ");
+//			System.out.println("Students: " + generatedList + " saved to info.xml file. ");
 
 		} finally {
 			if (os != null) {
@@ -45,10 +45,8 @@ public class XmlConverter {
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
 	public List<StudentDO> getStudents() throws IOException {
 		createStudentXml();
-		
 		// Unmarshall the xml file to StudentDO object
 		FileInputStream is = null;		
 		StudentsDO xmlStudents;
@@ -60,8 +58,7 @@ public class XmlConverter {
 			
 			xmlStudents = (StudentsDO) this.unmarshaller.unmarshal(new StreamSource(is));
 			studentDOs = xmlStudents.getStudents();
-			System.out.println("Students from XML: " + xmlStudents);
-			System.out.println("Students from XML: " + studentDOs);
+//			System.out.println("Students from XML: " + studentDOs);
 			
 		} finally {
 			
